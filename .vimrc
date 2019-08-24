@@ -18,7 +18,7 @@ Plugin 'gmarik/Vundle.vim'
 " vundle plugin install with :PluginInstall
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
@@ -59,8 +59,8 @@ set number relativenumber
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " open nerd tree automatically and move cursor to main window
-autocmd VimEnter * NERDTree
-autocmd VimEnter * execute "normal \<C-W>l"
+" autocmd VimEnter * NERDTree
+" autocmd VimEnter * execute "normal \<C-W>l"
 
 if has('gui_running')
   set background=dark
@@ -80,7 +80,8 @@ au Filetype python set
      \ textwidth=79
 
 " remove trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//
+autocmd BufWritePre * :%s/\s\+$//e
+"silent! :%s/\s\+$//
 
 set encoding=utf-8
 
